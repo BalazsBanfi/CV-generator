@@ -1,12 +1,14 @@
-//import { useState } from "react";
+import "./styles/style.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import "./styles/style.css";
-
+import Editor from "./components/Editor";
+import Printable from "./components/Printable";
 function App() {
   return (
     <>
       <Header />
+      <Editor />
+      <Printable />
       <Footer />
     </>
   );
