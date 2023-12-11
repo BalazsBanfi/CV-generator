@@ -6,12 +6,13 @@ import { Person } from "./components/sampleCV";
 import { useState } from "react";
 
 function App() {
-  const [data, setData] = useState({ Person });
+  const [data, setData] = useState(Person);
+
   return (
     <>
       <Header />
       <Editor />
-      <Printable data={Person.personal} Size={100} />
+      <Printable cv={data} Size={100} />
       <Footer />
     </>
   );
