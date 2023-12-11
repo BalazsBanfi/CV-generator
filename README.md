@@ -39,7 +39,6 @@ The Odin Project challenges help you improve your coding skills by building real
 - JavaScrip
 - Store values in objects
 - Git branches, git merge
-- Test Driven Develope
 - Grid, CSS pseudo, change attributes with JavaScript
 
 ### Continued development
