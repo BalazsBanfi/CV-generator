@@ -59,15 +59,18 @@ footer {
   background-color: var(--headBg);
   color: var(--headC);
   border-top: 1px solid var(--borderC);
-  font-size: 0.5rem;
 }
 
 footer * {
   padding: 0.5rem;
 }
 
+footer a {
+  max-width: 40px;
+}
+
 /**********************
-***Container section***
+***Root section***
 **********************/
 
 .container {
@@ -80,255 +83,12 @@ footer * {
 }
 
 /******************
-  ***New game form***
-  *******************/
-
-#controllers {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: var(--headBg);
-  opacity: 0.8;
-  display: grid;
-  place-content: center;
-}
-
-#newGame {
-  opacity: 1;
-  max-width: 450px;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--paraP);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0px 0px 13px 5px var(--paraP);
-}
-
-#newGame > * {
-  text-align: center;
-  font-size: 1.5rem;
-  color: var(--blackCell);
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 15px;
-}
-
-#newGameBtn {
-  color: black;
-  font-weight: 800;
-  background-color: var(--bodyBg);
-  cursor: pointer;
-}
-
-#newGameBtn:hover {
-  opacity: 0.75;
-}
-
-/******************
-  ***Table section***
-  ******************/
-
-#computersBoard {
-  box-shadow: 0px 0px 13px 5px var(--borderC);
-  margin: 2rem;
-  display: grid;
-  grid-template: repeat(10, 1fr) / repeat(10, 1fr);
-  place-items: center;
-  width: 500px;
-  height: 500px;
-}
-
-#computersBoard > div {
-  background-color: var(--blackCell);
-}
-
-#playersBoard {
-  box-shadow: 0px 0px 13px 5px var(--borderC);
-  margin: 2rem;
-  display: grid;
-  grid-template: repeat(10, 1fr) / repeat(10, 1fr);
-  place-items: center;
-  width: 500px;
-  height: 500px;
-}
-
-.cellNull {
-  width: 50px;
-  height: 50px;
-  font-size: 1.25rem;
-  border: 1px solid black;
-  color: rgb(9, 19, 22);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.computer {
-  cursor: pointer;
-}
-
-.computer:hover {
-  opacity: 0.4;
-}
-
-.player {
-  background-color: var(--whiteCell);
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-/***********************
-  ***Hit and miss cells***
-  ***********************/
-
-.hit {
-  background-image: url(./pinRed.svg);
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: center;
-  animation: append-animate 0.6s ease-in-out;
-}
-
-.miss {
-  background-image: url(./pinWhite.svg);
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: center;
-  animation: append-animate 0.6s ease-in-out;
-}
-
-@keyframes append-animate {
-  from {
-    transform: translateY(-40px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  to {
-    transform: translateY(0px);
-  }
-}
-
-/**************************
-    ***Cell columns and rows***
-    **************************/
-
-/* Test show the boats */
-.Carrier {
-  border: 4px solid red;
-}
-.Battleship {
-  border: 4px solid green;
-}
-.Cruiser {
-  border: 4px solid yellow;
-}
-.Submarine {
-  border: 4px solid blue;
-}
-.Destroyer {
-  border: 4px solid purple;
-}
-
-.Battleship {
-  border: 4px solid cyan;
-}
-
-.firstRow::before {
-  position: absolute;
-  bottom: 60px;
-}
-
-.firstColumn::after {
-  position: absolute;
-  right: 60px;
-}
-
-.firstRow:nth-child(1)::before {
-  content: "A";
-}
-
-.firstRow:nth-child(2)::before {
-  content: "B";
-}
-
-.firstRow:nth-child(3)::before {
-  content: "C";
-}
-
-.firstRow:nth-child(4)::before {
-  content: "D";
-}
-
-.firstRow:nth-child(5)::before {
-  content: "E";
-}
-
-.firstRow:nth-child(6)::before {
-  content: "F";
-}
-
-.firstRow:nth-child(7)::before {
-  content: "G";
-}
-
-.firstRow:nth-child(8)::before {
-  content: "H";
-}
-
-.firstRow:nth-child(9)::before {
-  content: "I";
-}
-
-.firstRow:nth-child(10)::before {
-  content: "J";
-}
-
-.firstColumn:nth-child(1)::after {
-  content: "1";
-}
-
-.firstColumn:nth-child(11)::after {
-  content: "2";
-}
-
-.firstColumn:nth-child(21)::after {
-  content: "3";
-}
-
-.firstColumn:nth-child(31)::after {
-  content: "4";
-}
-.firstColumn:nth-child(41)::after {
-  content: "5";
-}
-
-.firstColumn:nth-child(51)::after {
-  content: "6";
-}
-
-.firstColumn:nth-child(61)::after {
-  content: "7";
-}
-
-.firstColumn:nth-child(71)::after {
-  content: "8";
-}
-
-.firstColumn:nth-child(81)::after {
-  content: "9";
-}
-
-.firstColumn:nth-child(91)::after {
-  content: "10";
-}
+***New game form***
+*******************/
 
 /************************
-    ***Media query section***
-    ************************/
+***Media query section***
+************************/
 
 @media screen and (max-width: 1200px) {
   .container {
