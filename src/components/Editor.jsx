@@ -1,7 +1,7 @@
 export default function Editor() {
   return (
-    <>
-      <p>Made by</p>
-    </>
+    <div className="editor">
+      <p>Made by APA</p>
+    </div>
   );
 }
