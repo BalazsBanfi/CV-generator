@@ -1,7 +1,9 @@
+import General from "./General";
+
 export default function Editor() {
   return (
     <div className="editor">
-      <p>Made by APA</p>
+      <General />
     </div>
   );
 }
