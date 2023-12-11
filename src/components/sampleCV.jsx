@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
-import samplePerson from "../assets/samplePerson.jpg";
+import personImg from "../assets/person.jpg";
 
 export const Person = {
-  fileName: "samplePerson.jpg",
-  fileSrc: samplePerson,
+  fileName: "person.jpg",
+  fileSrc: personImg,
   personal: [
     {
       name: "First name",
