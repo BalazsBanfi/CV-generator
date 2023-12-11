@@ -6,6 +6,7 @@ export default function Printable({ cv }) {
       </p>
     );
   });
+
   const educationInfo = cv.education.map((x, index) => {
     return (
       <ul key={x.id}>
