@@ -6,13 +6,18 @@ import Printable from "./components/Printable";
 import { Person } from "./components/sampleCV";
 
 function App() {
-  const [data, setData] = useState(Person);
+  const [personalData, setPersonalData] = useState(Person.personal);
+  const [educationData, setEducationData] = useState(Person.education);
+  const [professionData, setProfessionData] = useState(Person.profession);
 
   return (
     <>
       <Header />
-      <Editor cv={data} setData={setData} />
-      <Printable cv={data} />
+      <Printable
+        personalData={personalData}
+        educationData={educationData}
+        professionData={professionData}
+      />
       <Footer />
     </>
   );

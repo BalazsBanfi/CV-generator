@@ -1,5 +1,9 @@
-export default function Printable({ cv }) {
-  const personalInfo = cv.personal.map((x) => {
+export default function Printable({
+  personalData,
+  educationData,
+  professionData,
+}) {
+  const personalInfo = personalData.map((x) => {
     return (
       <p key={x.name}>
         {x.name}: {x.text}
@@ -7,7 +11,7 @@ export default function Printable({ cv }) {
     );
   });
 
-  const educationInfo = cv.education.map((x, index) => {
+  const educationInfo = educationData.map((x, index) => {
     return (
       <ul key={x.id}>
         {index + 1}.<li key="x.degree">Degree: {x.degree}</li>
@@ -19,7 +23,7 @@ export default function Printable({ cv }) {
     );
   });
 
-  const professionInfo = cv.profession.map((x, index) => {
+  const professionInfo = professionData.map((x, index) => {
     return (
       <ul key={x.id}>
         {index + 1}.<li key="x.title">Title: {x.title}</li>
