@@ -1,32 +1,73 @@
-function General() {
-  const fields = ["Firstname", "Lastname", "Current role"];
-  const contact = ["Current address", "Email address", "Contact number"];
+export default function Editor({ cv, setData }) {
+  const personalInfo = cv.personal.map((x) => {
+    return (
+      <label key={x.name}>
+        {x.name}:{" "}
+        <input
+          type={x.type ? x.type : "text"}
+          placeholder={x.name.toLowerCase()}
+          required
+        ></input>
+      </label>
+    );
+  });
 
-  const inputFields = fields.map((name) => (
-    <label key={name}>
-      {name}: <input placeholder={name} required></input>
-    </label>
-  ));
-  const contacts = contact.map((name) => (
-    <label key={name}>
-      {name}: <input placeholder={name} required></input>
-    </label>
-  ));
+  function Form(props) {
+    return (
+      <form key={props.id}>
+        <label>
+          {"Degree: "}
+          <input type={"text"} placeholder={"degree"} required></input>
+        </label>
+        <label>
+          {"School: "}
+          <input type={"text"} placeholder={"school"} required></input>
+        </label>
+        <label>
+          {"City: "}
+          <input type={"text"} placeholder={"city"} required></input>
+        </label>
+        <label>
+          {"Start: "}
+          <input type={"text"} placeholder={"start"} required></input>
+        </label>
+        <label>
+          {"End: "}
+          <input type={"text"} placeholder={"end"} required></input>
+        </label>
+      </form>
+    );
+  }
 
-  return (
-    <div className="general">
-      <h3>General information</h3>
-      <form>{inputFields}</form>
-      <h3>Contact information</h3>
-      <form>{contacts}</form>
-    </div>
-  );
-}
+  const educationInfo = cv.education.map((x) => {
+    return (
+      <>
+        <Form elem={x} />
+      </>
+    );
+  });
 
-export default function Editor({ cv }) {
+  const professionInfo = cv.profession.map((x, index) => {
+    return (
+      <ul key={x.id}>
+        {index + 1}.<li key="x.title">Title: {x.title}</li>
+        <li key="x.company">Company: {x.company}</li>
+        <li key="x.start">Start: {x.start}</li>
+        <li key="x.end">End: {x.end}</li>
+        <li key="x.description">Description: {x.description}</li>
+      </ul>
+    );
+  });
+
   return (
     <div className="editor">
-      <General />
+      <h3>Your datas</h3>
+      <h4>Personal informations:</h4>
+      {personalInfo}
+      <h4>Education:</h4>
+      {educationInfo}
+      <h4>Profession:</h4>
+      {professionInfo}
     </div>
   );
 }

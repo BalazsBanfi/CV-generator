@@ -8,22 +8,32 @@ export const Person = {
     {
       name: "First name",
       text: "Balázs",
+      type: "text",
     },
     {
       name: "Last  name",
       text: "Bánfi",
-    },
-    {
-      name: "Email",
-      text: "banfibalazs81@gmail.com",
-    },
-    {
-      name: "Phone number",
-      text: "33701234567",
+      type: "text",
     },
     {
       name: "City",
       text: "Szeged, HUN",
+      type: "text",
+    },
+    {
+      name: "Email",
+      text: "banfibalazs81@gmail.com",
+      type: "email",
+    },
+    {
+      name: "Phone number",
+      text: "33701234567",
+      type: "tel",
+    },
+    {
+      name: "Website",
+      text: "https://www.linkedin.com/in/banfibalazs/",
+      type: "url",
     },
   ],
 
