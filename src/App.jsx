@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Header />
-      <Editor data={data} setData={setData} />
+      <Editor cv={data} setData={setData} />
       <Printable cv={data} />
       <Footer />
     </>
