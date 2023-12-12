@@ -25,12 +25,29 @@ function FormEdu(props) {
   );
 }
 
+const handleChange = (value) => () => {
+  console.log(value);
+  setProfessionData((items) =>
+    items.map((item) => ({
+      ...item,
+      title: value,
+    }))
+  );
+};
+
 function FormProf(props) {
   return (
     <form key={props.id}>
       <label>
         {"Title:"}
-        <input type={"text"} placeholder={"title"} required></input>
+        <input
+          type={"text"}
+          placeholder={"title"}
+          required
+          onChange={(e) => {
+            handleChange(e.target.value);
+          }}
+        ></input>
       </label>
       <label>
         {"Company:"}
@@ -52,7 +69,14 @@ function FormProf(props) {
   );
 }
 
-export default function Editor({ personalData, setPersonalData }) {
+export default function Editor({
+  personalData,
+  educationData,
+  professionData,
+  setPersonalData,
+  setEducationData,
+  setProfessionData,
+}) {
   const personalInfo = personalData.map((x, i) => {
     return (
       <label key={x.name}>
@@ -61,17 +85,30 @@ export default function Editor({ personalData, setPersonalData }) {
           type={x.type ? x.type : "text"}
           placeholder={x.name.toLowerCase()}
           required
+          onChange={(e) => {
+            setPersonalData(
+              personalData.map((item) =>
+                item.name === x.name ? { ...item, text: e.target.value } : item
+              )
+            );
+          }}
         ></input>
       </label>
     );
   });
 
-  const educationInfo = cv.education.map((x) => {
+  const educationInfo = educationData.map((x) => {
     return <FormEdu elem={x} />;
   });
 
-  const professionInfo = cv.profession.map((x) => {
-    return <FormProf elem={x} />;
+  const professionInfo = professionData.map((x) => {
+    return (
+      <FormProf
+        professionData={professionData}
+        setProfessionData={setProfessionData}
+        elem={x}
+      />
+    );
   });
 
   return (
