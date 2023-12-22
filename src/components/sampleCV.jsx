@@ -40,4 +40,12 @@ export const Profession = [
     start: "2019",
     end: "present",
   },
+  {
+    id: uuidv4(),
+    title: "Medior Software Engineer",
+    company: "IT Solutions",
+    description: "I was the leader of the IT team.",
+    start: "2019",
+    end: "present",
+  },
 ];

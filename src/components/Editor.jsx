@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 export default function Editor({
   person,
   education,
@@ -10,26 +12,68 @@ export default function Editor({
     setPerson({ ...person, [e.target.name]: e.target.value });
   }
 
-  function handleChangeEd(e) {
-    setEducation({ ...education, [e.target.name]: e.target.value });
-  }
-
-  function handleChangeEd2(index, e) {
-    const edu2 = education.map((edu, i) => {
-      if (i === index) {
-        console.log(e.target.value);
-        console.log(e.target.name);
-        console.log(index);
-        edu[e.target.name] = e.target.value;
-      } else {
+  function handleChangeEd(index, e) {
+    setEducation(
+      education.map((edu, i) => {
+        if (i === index) {
+          edu[e.target.name] = e.target.value;
+        }
         return edu;
-      }
-    });
-    setEducation(edu2);
+      })
+    );
+  }
+  function handleDeleteEd(index) {
+    setEducation(
+      education.filter((edu, i) => {
+        return i !== index;
+      })
+    );
   }
 
-  function handleChangePro(e) {
-    setProfession({ ...profession, [e.target.name]: e.target.value });
+  function handleAddEd(e) {
+    e.preventDefault();
+    const newElem = {
+      id: uuidv4(),
+      degree: "",
+      school: "",
+      city: "",
+      start: "",
+      end: "",
+    };
+    setEducation([...education, newElem]);
+  }
+
+  function handleChangePro(index, e) {
+    setProfession(
+      profession.map((pro, i) => {
+        if (i === index) {
+          pro[e.target.name] = e.target.value;
+        }
+        return pro;
+      })
+    );
+  }
+
+  function handleDeletePro(index) {
+    setProfession(
+      profession.filter((pro, i) => {
+        return i !== index;
+      })
+    );
+  }
+
+  function handleAddPro(e) {
+    e.preventDefault();
+    const newElem = {
+      id: uuidv4(),
+      title: "",
+      company: "",
+      description: "",
+      start: "",
+      end: "",
+    };
+
+    setProfession([...profession, newElem]);
   }
 
   return (
@@ -45,6 +89,7 @@ export default function Editor({
             onChange={handleChangePer}
           ></input>
         </label>
+
         <label>
           Last name:{" "}
           <input
@@ -109,7 +154,7 @@ export default function Editor({
                   placeholder={edu.degree}
                   required
                   onChange={(e) => {
-                    handleChangeEd2(index, e);
+                    handleChangeEd(index, e);
                   }}
                 ></input>
               </label>
@@ -120,7 +165,9 @@ export default function Editor({
                   name="school"
                   placeholder={edu.school}
                   required
-                  onChange={handleChangeEd}
+                  onChange={(e) => {
+                    handleChangeEd(index, e);
+                  }}
                 ></input>
               </label>
               <label>
@@ -130,7 +177,9 @@ export default function Editor({
                   name="city"
                   placeholder={edu.city}
                   required
-                  onChange={handleChangeEd}
+                  onChange={(e) => {
+                    handleChangeEd(index, e);
+                  }}
                 ></input>
               </label>
               <label>
@@ -140,7 +189,9 @@ export default function Editor({
                   name="start"
                   placeholder={edu.start}
                   required
-                  onChange={handleChangeEd}
+                  onChange={(e) => {
+                    handleChangeEd(index, e);
+                  }}
                 ></input>
               </label>
               <label>
@@ -150,9 +201,23 @@ export default function Editor({
                   name="end"
                   placeholder={edu.end}
                   required
-                  onChange={handleChangeEd}
+                  onChange={(e) => {
+                    handleChangeEd(index, e);
+                  }}
                 ></input>
               </label>
+              {education.length > 1 && (
+                <button
+                  onClick={() => {
+                    handleDeleteEd(index);
+                  }}
+                >
+                  Delete
+                </button>
+              )}
+              {index === education.length - 1 && index < 4 && (
+                <button onClick={handleAddEd}>Add</button>
+              )}
             </form>
           );
         })}
@@ -169,7 +234,9 @@ export default function Editor({
                   name="title"
                   placeholder={prof.title}
                   required
-                  onChange={handleChangePro}
+                  onChange={(e) => {
+                    handleChangePro(index, e);
+                  }}
                 ></input>
               </label>
               <label>
@@ -179,7 +246,9 @@ export default function Editor({
                   name="company"
                   placeholder={prof.company}
                   required
-                  onChange={handleChangePro}
+                  onChange={(e) => {
+                    handleChangePro(index, e);
+                  }}
                 ></input>
               </label>
               <label>
@@ -189,7 +258,9 @@ export default function Editor({
                   name="description"
                   placeholder={prof.description}
                   required
-                  onChange={handleChangePro}
+                  onChange={(e) => {
+                    handleChangePro(index, e);
+                  }}
                 ></input>
               </label>
               <label>
@@ -199,7 +270,9 @@ export default function Editor({
                   name="start"
                   placeholder={prof.start}
                   required
-                  onChange={handleChangePro}
+                  onChange={(e) => {
+                    handleChangePro(index, e);
+                  }}
                 ></input>
               </label>
               <label>
@@ -209,9 +282,23 @@ export default function Editor({
                   name="end"
                   placeholder={prof.end}
                   required
-                  onChange={handleChangePro}
+                  onChange={(e) => {
+                    handleChangePro(index, e);
+                  }}
                 ></input>
               </label>
+              {profession.length > 1 && (
+                <button
+                  onClick={() => {
+                    handleDeletePro(index);
+                  }}
+                >
+                  Delete
+                </button>
+              )}
+              {index === profession.length - 1 && index < 4 && (
+                <button onClick={handleAddPro}>Add</button>
+              )}
             </form>
           );
         })}

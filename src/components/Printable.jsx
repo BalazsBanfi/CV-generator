@@ -26,11 +26,11 @@ export default function Printable({
         <div key={educ.id + "1"} className="education-data">
           <h4>{index + 1}. education</h4>
           <ul key={educ.id}>
-            <li key={educ.degree}>Degree: {educ.degree}</li>
-            <li key={educ.school}>School: {educ.school}</li>
-            <li key={educ.city}>City: {educ.city}</li>
-            <li key={educ.start}>Start: {educ.start}</li>
-            <li key={educ.end}>End: {educ.end}</li>
+            <li key={educ.degree + "1"}>Degree: {educ.degree}</li>
+            <li key={educ.school + "2"}>School: {educ.school}</li>
+            <li key={educ.city + "3"}>City: {educ.city}</li>
+            <li key={educ.start + "4"}>Start: {educ.start}</li>
+            <li key={educ.end + "5"}>End: {educ.end}</li>
           </ul>
         </div>
       );
@@ -43,11 +43,13 @@ export default function Printable({
         <div key={prof.id + "1"} className="profession-data">
           <h4>{index + 1}. profession</h4>
           <ul key={prof.id}>
-            <li key={prof.title}>Title: {prof.title}</li>
-            <li key={prof.company}>Company: {prof.company}</li>
-            <li key={prof.start}>Start: {prof.start}</li>
-            <li key={prof.end}>End: {prof.end}</li>
-            <li key={prof.description}>Description: {prof.description}</li>
+            <li key={prof.title + "1"}>Title: {prof.title}</li>
+            <li key={prof.company + "2"}>Company: {prof.company}</li>
+            <li key={prof.start + "3"}>Start: {prof.start}</li>
+            <li key={prof.end + "4"}>End: {prof.end}</li>
+            <li key={prof.description + "5"}>
+              Description: {prof.description}
+            </li>
           </ul>
         </div>
       );
