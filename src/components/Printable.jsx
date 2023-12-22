@@ -3,7 +3,7 @@ export default function Printable({
   educationData,
   professionData,
 }) {
-  function PersonalInfo(person) {
+  function PersonalInfo({ person }) {
     return (
       <div className="personal-data">
         <h3>
@@ -20,11 +20,11 @@ export default function Printable({
     );
   }
 
-  function EducationInfo(education) {
+  function EducationInfo({ education }) {
     return education.map((educ, index) => {
       return (
         <div key={educ.id + "1"} className="education-data">
-          <h3>{index + 1}. education</h3>
+          <h4>{index + 1}. education</h4>
           <ul key={educ.id}>
             <li key={educ.degree}>Degree: {educ.degree}</li>
             <li key={educ.school}>School: {educ.school}</li>
@@ -37,11 +37,11 @@ export default function Printable({
     });
   }
 
-  function ProfessionInfo(profession) {
+  function ProfessionInfo({ profession }) {
     return profession.map((prof, index) => {
       return (
         <div key={prof.id + "1"} className="profession-data">
-          <h3>{index + 1}. profession</h3>
+          <h4>{index + 1}. profession</h4>
           <ul key={prof.id}>
             <li key={prof.title}>Title: {prof.title}</li>
             <li key={prof.company}>Company: {prof.company}</li>
