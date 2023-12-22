@@ -14,14 +14,13 @@ function App() {
     <>
       <Header />
       <Editor
-        personalData={personalData}
-        educationData={educationData}
-        professionData={professionData}
-        setPersonalData={setPersonalData}
-        setEducationData={setEducationData}
-        setProfessionData={setProfessionData}
+        person={personalData}
+        education={educationData}
+        profession={professionData}
+        setPerson={setPersonalData}
+        setEducation={setEducationData}
+        setProfession={setProfessionData}
       />
-
       <Printable
         personalData={personalData}
         educationData={educationData}
