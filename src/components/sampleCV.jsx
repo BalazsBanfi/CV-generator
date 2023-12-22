@@ -21,6 +21,14 @@ export const Education = [
     start: "2010",
     end: "2015",
   },
+  {
+    id: uuidv4(),
+    degree: "BSC",
+    school: "ZMNE",
+    city: "Budapest",
+    start: "2010",
+    end: "2015",
+  },
 ];
 
 export const Profession = [

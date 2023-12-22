@@ -14,6 +14,20 @@ export default function Editor({
     setEducation({ ...education, [e.target.name]: e.target.value });
   }
 
+  function handleChangeEd2(index, e) {
+    const edu2 = education.map((edu, i) => {
+      if (i === index) {
+        console.log(e.target.value);
+        console.log(e.target.name);
+        console.log(index);
+        edu[e.target.name] = e.target.value;
+      } else {
+        return edu;
+      }
+    });
+    setEducation(edu2);
+  }
+
   function handleChangePro(e) {
     setProfession({ ...profession, [e.target.name]: e.target.value });
   }
@@ -82,12 +96,11 @@ export default function Editor({
           ></input>
         </label>
       </form>
-
       <>
         {education.map((edu, index) => {
           return (
             <form key={edu.id}>
-              <h4>Education {index}.</h4>
+              <h4>Education {index + 1}.</h4>
               <label>
                 Degree:
                 <input
@@ -95,7 +108,9 @@ export default function Editor({
                   name="degree"
                   placeholder={edu.degree}
                   required
-                  onChange={handleChangeEd}
+                  onChange={(e) => {
+                    handleChangeEd2(index, e);
+                  }}
                 ></input>
               </label>
               <label>
@@ -146,7 +161,7 @@ export default function Editor({
         {profession.map((prof, index) => {
           return (
             <form key={prof.id}>
-              <h4>Profession {index}.</h4>
+              <h4>Profession {index + 1}.</h4>
               <label>
                 Title:
                 <input
