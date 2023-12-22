@@ -3,12 +3,12 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Editor from "./components/Editor";
 import Printable from "./components/Printable";
-import { Person } from "./components/sampleCV";
+import { Personal, Education, Profession } from "./components/sampleCV";
 
 function App() {
-  const [personalData, setPersonalData] = useState(Person.personal);
-  const [educationData, setEducationData] = useState(Person.education);
-  const [professionData, setProfessionData] = useState(Person.profession);
+  const [personalData, setPersonalData] = useState(Personal);
+  const [educationData, setEducationData] = useState(Education);
+  const [professionData, setProfessionData] = useState(Profession);
 
   return (
     <>

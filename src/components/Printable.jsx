@@ -3,47 +3,66 @@ export default function Printable({
   educationData,
   professionData,
 }) {
-  const personalInfo = personalData.map((x) => {
+  function PersonalInfo(person) {
     return (
-      <p key={x.name}>
-        {x.name}: {x.text}
-      </p>
+      <div className="personal-data">
+        <h3>
+          {person.firstName}
+          {", "}
+          {person.lastName}
+        </h3>
+        <h4>Contact & Address:</h4>
+        <p>Address: {person.city}</p>
+        <p>E-mail: {person.email}</p>
+        <p>Phone no.: {person.phoneNumber}</p>
+        <p>Website: {person.website}</p>
+      </div>
     );
-  });
+  }
 
-  const educationInfo = educationData.map((x, index) => {
-    return (
-      <ul key={x.id}>
-        {index + 1}.<li key="x.degree">Degree: {x.degree}</li>
-        <li key="x.school">School: {x.school}</li>
-        <li key="x.city">City: {x.city}</li>
-        <li key="x.start">Start: {x.start}</li>
-        <li key="x.end">End: {x.end}</li>
-      </ul>
-    );
-  });
+  function EducationInfo(education) {
+    return education.map((educ, index) => {
+      return (
+        <div key={educ.id + "1"} className="education-data">
+          <h3>{index + 1}. education</h3>
+          <ul key={educ.id}>
+            <li key={educ.degree}>Degree: {educ.degree}</li>
+            <li key={educ.school}>School: {educ.school}</li>
+            <li key={educ.city}>City: {educ.city}</li>
+            <li key={educ.start}>Start: {educ.start}</li>
+            <li key={educ.end}>End: {educ.end}</li>
+          </ul>
+        </div>
+      );
+    });
+  }
 
-  const professionInfo = professionData.map((x, index) => {
-    return (
-      <ul key={x.id}>
-        {index + 1}.<li key="x.title">Title: {x.title}</li>
-        <li key="x.company">Company: {x.company}</li>
-        <li key="x.start">Start: {x.start}</li>
-        <li key="x.end">End: {x.end}</li>
-        <li key="x.description">Description: {x.description}</li>
-      </ul>
-    );
-  });
+  function ProfessionInfo(profession) {
+    return profession.map((prof, index) => {
+      return (
+        <div key={prof.id + "1"} className="profession-data">
+          <h3>{index + 1}. profession</h3>
+          <ul key={prof.id}>
+            <li key={prof.title}>Title: {prof.title}</li>
+            <li key={prof.company}>Company: {prof.company}</li>
+            <li key={prof.start}>Start: {prof.start}</li>
+            <li key={prof.end}>End: {prof.end}</li>
+            <li key={prof.description}>Description: {prof.description}</li>
+          </ul>
+        </div>
+      );
+    });
+  }
 
   return (
     <div className="printable">
-      <h3>Your CV</h3>
+      <h3>Curriculum Vitae</h3>
       <h4>Personal informations:</h4>
-      {personalInfo}
+      <PersonalInfo person={personalData} />
       <h4>Education:</h4>
-      {educationInfo}
+      <EducationInfo education={educationData} />
       <h4>Profession:</h4>
-      {professionInfo}
+      <ProfessionInfo profession={professionData} />
     </div>
   );
 }
