@@ -4,7 +4,7 @@
   --borderC: rgb(89, 19, 22);
   --bodyBg: rgb(38, 89, 106);
 
-  --printc1: rgb(245, 235, 235);
+  --printC1: rgb(245, 235, 235);
   --printC2: rgb(228, 208, 208);
   --printC3: rgb(213, 180, 180);
   --printC4: rgb(134, 112, 112);
@@ -130,7 +130,7 @@ button:hover {
 **********************/
 
 .printable {
-  background-color: var(--printc1);
+  background-color: var(--printC1);
   color: var(--printC4);
   border: 25px solid var(--printC2);
   padding: 1rem;
@@ -139,8 +139,17 @@ button:hover {
 
 .container {
   display: grid;
-  gap: 2rem;
   grid-template: repeat(2, min-content) / 1fr 1fr;
+}
+
+.container > div > div {
+  padding: 1rem;
+}
+
+.container h4 {
+  color: var(--printC1);
+  background-color: var(--printC3);
+  margin: 10px 5px 5px;
 }
 
 .personal-data {

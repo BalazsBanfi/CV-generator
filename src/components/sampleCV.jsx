@@ -21,25 +21,9 @@ export const Education = [
     start: "2010",
     end: "2015",
   },
-  {
-    id: uuidv4(),
-    degree: "BSC",
-    school: "ZMNE",
-    city: "Budapest",
-    start: "2010",
-    end: "2015",
-  },
 ];
 
 export const Profession = [
-  {
-    id: uuidv4(),
-    title: "Medior Software Engineer",
-    company: "IT Solutions",
-    description: "I was the leader of the IT team.",
-    start: "2019",
-    end: "present",
-  },
   {
     id: uuidv4(),
     title: "Medior Software Engineer",
