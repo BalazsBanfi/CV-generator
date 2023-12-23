@@ -77,7 +77,8 @@ export default function Editor({
   }
 
   return (
-    <div>
+    <div className="editor">
+      <h4>Personal informations</h4>
       <form>
         <label>
           First name:{" "}
@@ -121,7 +122,7 @@ export default function Editor({
           ></input>
         </label>
         <label>
-          First name:{" "}
+          Phone no.:{" "}
           <input
             type="text"
             name="phoneNumber"
@@ -131,7 +132,7 @@ export default function Editor({
           ></input>
         </label>
         <label>
-          First name:{" "}
+          Website:{" "}
           <input
             type="url"
             name="website"
@@ -206,17 +207,18 @@ export default function Editor({
                   }}
                 ></input>
               </label>
+              {index === education.length - 1 && index < 4 && (
+                <button onClick={handleAddEd}>Add</button>
+              )}
               {education.length > 1 && (
                 <button
+                  className="btn-red"
                   onClick={() => {
                     handleDeleteEd(index);
                   }}
                 >
                   Delete
                 </button>
-              )}
-              {index === education.length - 1 && index < 4 && (
-                <button onClick={handleAddEd}>Add</button>
               )}
             </form>
           );
@@ -287,17 +289,18 @@ export default function Editor({
                   }}
                 ></input>
               </label>
+              {index === profession.length - 1 && index < 4 && (
+                <button onClick={handleAddPro}>Add</button>
+              )}
               {profession.length > 1 && (
                 <button
+                  className="btn-red"
                   onClick={() => {
                     handleDeletePro(index);
                   }}
                 >
                   Delete
                 </button>
-              )}
-              {index === profession.length - 1 && index < 4 && (
-                <button onClick={handleAddPro}>Add</button>
               )}
             </form>
           );
