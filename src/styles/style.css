@@ -139,7 +139,7 @@ button:hover {
 
 .container {
   display: grid;
-  grid-template: repeat(2, min-content) / 1fr 1fr;
+  grid-template: repeat(2, min-content) / repeat(4, 1fr);
 }
 
 .container > div > div {
@@ -153,15 +153,21 @@ button:hover {
 }
 
 .personal-data {
-  grid-area: 1 / 1 / 2 / 3;
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+.profile-pic > img {
+  grid-area: 1 / 4 / 2 / 5;
+  border: 2px solid var(--printC4);
+  border-radius: 10px;
 }
 
 .education-data {
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: 2 / 1 / 3 / 3;
 }
 
 .profession-data {
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2 / 3 / 3 / 5;
 }
 
 /*******************

@@ -20,6 +20,10 @@ export default function Printable({
     );
   }
 
+  function ProfilePic({ url }) {
+    return <img src={url} alt="Profile picture" width="200" height="200"></img>;
+  }
+
   function EducationInfo({ education }) {
     return education.map((educ, index) => {
       return (
@@ -62,6 +66,9 @@ export default function Printable({
       <div className="container">
         <div className="personal-data">
           <PersonalInfo person={personalData} />
+        </div>
+        <div className="profile-pic">
+          <ProfilePic url={personalData.fileSrc} />
         </div>
         <div className="education-data">
           <EducationInfo education={educationData} />
