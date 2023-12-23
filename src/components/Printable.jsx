@@ -6,6 +6,7 @@ export default function Printable({
   function PersonalInfo({ person }) {
     return (
       <div className="personal-data">
+        <h4>Personal informations:</h4>
         <h3>
           {person.firstName}
           {", "}
@@ -24,7 +25,7 @@ export default function Printable({
     return education.map((educ, index) => {
       return (
         <div key={educ.id + "1"} className="education-data">
-          <h4>{index + 1}. education</h4>
+          <h4>Education {index + 1}.</h4>
           <ul key={educ.id}>
             <li key={educ.degree + "1"}>Degree: {educ.degree}</li>
             <li key={educ.school + "2"}>School: {educ.school}</li>
@@ -41,7 +42,7 @@ export default function Printable({
     return profession.map((prof, index) => {
       return (
         <div key={prof.id + "1"} className="profession-data">
-          <h4>{index + 1}. profession</h4>
+          <h4>Profession {index + 1}.</h4>
           <ul key={prof.id}>
             <li key={prof.title + "1"}>Title: {prof.title}</li>
             <li key={prof.company + "2"}>Company: {prof.company}</li>
@@ -59,12 +60,17 @@ export default function Printable({
   return (
     <div className="printable">
       <h3>Curriculum Vitae</h3>
-      <h4>Personal informations:</h4>
-      <PersonalInfo person={personalData} />
-      <h4>Education:</h4>
-      <EducationInfo education={educationData} />
-      <h4>Profession:</h4>
-      <ProfessionInfo profession={professionData} />
+      <div className="container">
+        <div>
+          <PersonalInfo person={personalData} />
+        </div>
+        <div>
+          <EducationInfo education={educationData} />
+        </div>
+        <div>
+          <ProfessionInfo profession={professionData} />
+        </div>
+      </div>
     </div>
   );
 }

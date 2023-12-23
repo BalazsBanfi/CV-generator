@@ -78,6 +78,7 @@ export default function Editor({
 
   return (
     <div className="editor">
+      <h3>Edit here your CV..</h3>
       <h4>Personal informations</h4>
       <form>
         <label>

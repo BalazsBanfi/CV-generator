@@ -3,6 +3,11 @@
   --headC: rgb(123, 185, 204);
   --borderC: rgb(89, 19, 22);
   --bodyBg: rgb(38, 89, 106);
+
+  --printc1: rgb(245, 235, 235);
+  --printC2: rgb(228, 208, 208);
+  --printC3: rgb(213, 180, 180);
+  --printC4: rgb(134, 112, 112);
 }
 
 /* roboto-regular - latin */
@@ -27,7 +32,7 @@
 
 body {
   text-align: center;
-  font-size: 15px;
+  font-size: 22px;
   font-family: Roboto, sans-serif;
 
   background-color: var(--bodyBg);
@@ -48,7 +53,7 @@ header {
   background-color: var(--headBg);
   color: var(--headC);
   padding: 0.5rem;
-  border-bottom: 2px solid var(--borderC);
+  border-bottom: 4px solid var(--borderC);
 }
 
 header * {
@@ -59,9 +64,7 @@ header * {
 ***Editor section***
 *******************/
 h4 {
-  font-size: 2rem;
   font-weight: 600;
-  margin-top: 1rem;
 }
 
 .editor {
@@ -69,6 +72,7 @@ h4 {
   margin-left: 4rem;
   display: flex;
   flex-direction: column;
+  color: var(--headBg);
   border-right: 2px solid var(--borderC);
 }
 
@@ -82,29 +86,31 @@ form {
 label {
   width: 100%;
   float: left;
-  font-size: 1.5rem;
   font-weight: 600;
   text-align: right;
   margin: 5px;
 }
 
 input {
-  font-size: 1.25rem;
   width: 70%;
   padding: 3px 20px;
   margin: 0px 10px 0px 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
-
+  font-size: 16px;
   float: right;
 }
 
+/* button */
+
 button {
   width: 40%;
-  background-color: #4caf50;
-  color: white;
+  background-color: var(--headC);
+  color: var(--headBg);
+  font-size: 16px;
+  font-weight: 600;
   padding: 12px 20px;
-  margin: 3px 20px 13px;
+  margin: 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -115,6 +121,7 @@ button:hover {
 }
 
 .btn-red {
+  color: var(--headC);
   background-color: var(--borderC);
 }
 
@@ -123,6 +130,28 @@ button:hover {
 **********************/
 
 .printable {
+  background-color: var(--printc1);
+  color: var(--printC4);
+  border: 25px solid var(--printC2);
+  padding: 1rem;
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.container {
+  display: grid;
+  gap: 2rem;
+  grid-template: repeat(2, min-content) / 1fr 1fr;
+}
+
+.personal-data {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.education-data {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.profession-data {
   grid-area: 2 / 2 / 3 / 3;
 }
 
