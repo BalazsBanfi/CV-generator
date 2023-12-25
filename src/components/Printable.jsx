@@ -68,7 +68,7 @@ export default function Printable({
           <PersonalInfo person={personalData} />
         </div>
         <div className="profile-pic">
-          <ProfilePic url={personalData.fileSrc} />
+          <ProfilePic objectFit="cover" url={personalData.fileSrc} />
         </div>
         <div className="education-data">
           <EducationInfo education={educationData} />

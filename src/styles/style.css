@@ -177,6 +177,7 @@ button:hover {
 }
 
 .profile-pic > img {
+  object-fit: cover;
   grid-area: 1 / 4 / 2 / 5;
   border: 2px solid var(--printC4);
   border-radius: 10px;
