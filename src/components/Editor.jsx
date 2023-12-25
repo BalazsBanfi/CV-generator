@@ -154,6 +154,7 @@ export default function Editor({
             type="file"
             name="fileSrc"
             required
+            placeholder={person.fileSrc}
             onChange={handleChangePic}
           ></input>
         </label>
