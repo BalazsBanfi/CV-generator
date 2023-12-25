@@ -197,18 +197,24 @@ button:hover {
 footer {
   grid-area: 3 / 1 / 4 / 3;
   min-width: 100%;
-  padding: 0.5rem;
+  padding: 1rem;
   background-color: var(--headBg);
   color: var(--headC);
   border-top: 2px solid var(--borderC);
 }
 
 footer * {
-  padding: 0.5rem;
+  display: inline-block;
 }
 
-footer a {
-  max-width: 40px;
+footer img {
+  margin-left: 10px;
+  max-width: 22px;
+  transition: 0.5s ease-in-out;
+}
+
+footer img:hover {
+  transform: scale(1.5) rotate(360deg);
 }
 
 /************************
