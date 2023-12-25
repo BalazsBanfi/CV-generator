@@ -11,6 +11,12 @@ export default function Editor({
   function handleChangePer(e) {
     setPerson({ ...person, [e.target.name]: e.target.value });
   }
+  function handleChangePic(e) {
+    setPerson({
+      ...person,
+      [e.target.name]: URL.createObjectURL(e.target.files[0]),
+    });
+  }
 
   function handleChangeEd(index, e) {
     setEducation(
@@ -142,6 +148,15 @@ export default function Editor({
             onChange={handleChangePer}
           ></input>
         </label>
+        <label>
+          Picture:{" "}
+          <input
+            type="file"
+            name="fileSrc"
+            required
+            onChange={handleChangePic}
+          ></input>
+        </label>
       </form>
       <>
         {education.map((edu, index) => {
@@ -154,7 +169,7 @@ export default function Editor({
                   type="text"
                   name="degree"
                   placeholder={edu.degree}
-                  required
+                  accept="image/png, image/jpeg"
                   onChange={(e) => {
                     handleChangeEd(index, e);
                   }}
