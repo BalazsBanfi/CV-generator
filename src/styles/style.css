@@ -2,7 +2,8 @@
   --headBg: rgb(8, 40, 48);
   --headC: rgb(123, 185, 204);
   --borderC: rgb(89, 19, 22);
-  --bodyBg: rgb(38, 89, 106);
+  --bodyBg: rgb(108, 159, 176);
+  --buttonBg: rgb(196, 136, 148);
 
   --printC1: rgb(245, 235, 235);
   --printC2: rgb(228, 208, 208);
@@ -124,7 +125,7 @@ input[type="file"]::file-selector-button:hover {
 
 button {
   width: 40%;
-  background-color: var(--headC);
+  background-color: var(--buttonBg);
   color: var(--headBg);
   font-size: 16px;
   font-weight: 600;
