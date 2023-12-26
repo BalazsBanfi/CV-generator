@@ -182,8 +182,8 @@ button:hover {
   grid-area: 1 / 4 / 2 / 5;
   border: 2px solid var(--printC4);
   border-radius: 10px;
-  width: 100%;
-  height: auto;
+  width: 190px;
+  height: 190px;
 }
 
 .education-data {
