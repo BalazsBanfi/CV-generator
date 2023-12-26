@@ -10,7 +10,7 @@ export default function Footer() {
           rel="noreferrer"
           href="https://github.com/BalazsBanfi"
         >
-          <img id="footer-img" src={GitHubSvg} />
+          <img id="footer-img" alt="footer image" src={GitHubSvg} />
         </a>
       </p>
     </footer>
