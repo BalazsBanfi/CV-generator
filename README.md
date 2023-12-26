@@ -20,7 +20,7 @@ The Odin Project challenges help you improve your coding skills by building real
 
 ### Screenshot
 
-![Desktop screenshot](./desktop.png)
+![Desktop screenshot](./src/assets/desktop.png)
 
 ### Links
 
