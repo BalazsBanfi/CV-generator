@@ -209,6 +209,7 @@ footer {
 
 footer * {
   display: inline-block;
+  color: var(--headC);
 }
 
 footer img {
