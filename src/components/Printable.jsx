@@ -21,7 +21,7 @@ export default function Printable({
   }
 
   function ProfilePic({ url }) {
-    return <img src={url} alt="Profile picture" width="200" height="200"></img>;
+    return <img src={url} alt="Profile picture"></img>;
   }
 
   function EducationInfo({ education }) {
